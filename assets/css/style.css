@@ -1,6 +1,8 @@
 
 #navbar-brand {
-    font-family: 'Martel', serif;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #navbarDropdown {
@@ -42,26 +44,32 @@
 .display-4 {
     font-size: 24pt;
     font-weight: normal;
-    font-family: 'Martel', serif;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
 }
 
 .display-logo {
     position: relative;
     bottom: 75%;
     text-align: center;
+    text-shadow: black -5px 5px;
 }
 
 h1 {
     font-size: 86pt;
     font-weight: normal;
-    font-family: 'Martel', serif;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
     color: white;
+    text-shadow: black -5px 5px;
+    letter-spacing: 5px;
 }
 
 h2 {
-    font-size: 18pt;
+    font-size: 24pt;
     font-weight: normal;
-    font-family: 'Martel', serif;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
 }
 
 h3 {
@@ -88,7 +96,8 @@ h3 {
     grid-row-end: 3;
     font-size: 36pt;
     font-weight: normal;
-    font-family: 'Martel', serif;
+    font-family: 'Cabin', sans-serif;
+    text-transform: uppercase;
     z-index: 2;
     /* justify-items: center; */
     align-items: start;
@@ -101,7 +110,9 @@ h3 {
     grid-row-end: 4;
     align-items: start;
     z-index: 3;
-    background-color: #28a745;
+    background-color: black;
+    color: white;
+    border: none;
     padding: 15px 25px;
     width: auto;
     border-radius: 0;
@@ -110,7 +121,8 @@ h3 {
 }
 
 #itinerary-add-btn2:hover {
-    opacity: .8;
+    background-color: white;
+    color: black;
 }
 
 #main-img-container {
@@ -134,7 +146,7 @@ h3 {
     grid-row-start: 5;
     grid-row-end: 7;
     padding: 50px;
-    border: palevioletred solid 1pt;
+    border: palevioletred solid 2pt;
 }
 
 #home-weather-info{
@@ -143,7 +155,7 @@ h3 {
     grid-row-start: 5;
     grid-row-end: 6;
     padding: 50px;
-    border: orange solid 1pt;
+    border: orange solid 2pt;
 }
 
 #links {
@@ -152,11 +164,16 @@ h3 {
     grid-row-start: 6;
     grid-row-end: 7;
     padding: 50px;
-    border: lightseagreen solid 1pt;
+    border: darkmagenta solid 2pt;
 }
 
 a {
     color: grey;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
 }
 
 #itinerary {
@@ -172,7 +189,7 @@ a {
     grid-row-start: 8;
     grid-row-end: 9;
     padding: 50px;
-    border: palegreen solid 1pt;
+    border: palegreen solid 2pt;
     height: 400px;
     overflow: scroll;
 }
@@ -193,8 +210,10 @@ a {
 }
 
 #itinerary-add-btn {
-    margin-top: -85px;
-    background-color: #28a745;
+    margin-top: -75px;
+    background-color: black;
+    padding: 10px 15px;
+    border: none;
     border-radius: 0;
     width: auto;
 }
@@ -204,7 +223,7 @@ a {
 }
 #itinerary-container {
     /* background-color: rgba(30, 39, 22, .2); */
-    border: solid lightgrey 1pt;
+    border: solid lightseagreen 2pt;
     width: 100%;
 }
 
@@ -230,7 +249,10 @@ a {
 #edit {
     margin-top: -4px;
     border-radius: 0;
+    border: none;
     padding: 5px 15px;
+    background-color: lightseagreen;
+    color: white;
 }
 .itinerary-data-row:hover {
     opacity: 1;

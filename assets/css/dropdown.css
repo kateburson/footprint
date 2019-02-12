@@ -1,19 +1,19 @@
 /* Dropdown Button */
 .dropbtn {
-    background-color: rgba(255,255,255,.5);
-    border: white solid 1pt;
+    background-color: black;
+    border: none;
     border-radius: 0;
     width: 100%;
-    color: grey;
+    color: white;
     padding: 16px;
     font-size: 18pt;
-    border: none;
     cursor: pointer;
   }
   
   /* Dropdown button on hover & focus */
   .dropbtn:hover, .dropbtn:focus {
-    background-color: rgba(255,255,255,.8);
+    background-color: white;
+    color: black;
     border-radius: 0;
   }
   
