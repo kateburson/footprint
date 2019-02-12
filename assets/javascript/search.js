@@ -114,6 +114,7 @@ function parks(parkName) {
             $('#home-weather-info').prepend(h2Weather);
 
             $('#itinerary-add-btn').prop('disabled', false);
+            weatherObj.callHomeWeather();
             trails();
 
         });
@@ -207,7 +208,7 @@ $('#myDropdown1').on('click', 'p.list', function () {
     $('.grid').css({'display': 'grid'});
     unsplash($(this).text());
     parks($(this).text());
-    weatherObj.callHomeWeather();
+
 });
 
 $('#navbarDropdown').on('click', function () {
@@ -224,7 +225,7 @@ $('#myDropdown').on('click', 'p.list', function () {
     $('#myDropdown').toggle('hide');
     unsplash($(this).text());
     parks($(this).text());
-    weatherObj.callHomeWeather();
+
 });
 
 $('#itinerary-add-btn2').on('click', function () {
