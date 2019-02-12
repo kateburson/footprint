@@ -68,9 +68,6 @@ function parks(parkName) {
             var long = input[1].substring(6,18);
             console.log('longitude: ' + long);
 
-            trails();
-            weatherObj.callHomeWeather();
-
             appObj.lastParkCode = parkCode;
             appObj.lastParkName = parkName;
             appObj.lastParkLat = lat;
@@ -117,6 +114,7 @@ function parks(parkName) {
             $('#home-weather-info').prepend(h2Weather);
 
             $('#itinerary-add-btn').prop('disabled', false);
+            trails();
 
         });
 };
@@ -124,7 +122,7 @@ function parks(parkName) {
 function trails() {
     var lat = appObj.lastParkLat;
     var long = appObj.lastParkLong;
-    var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + long + '&maxDistance=10&key=200415723-df92bbbf592b6baa4ec5ef44ab0ffed8';
+    var queryURL = 'https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + long + '&key=200415723-df92bbbf592b6baa4ec5ef44ab0ffed8';
 
     $.ajax({
         url: queryURL,
@@ -132,6 +130,11 @@ function trails() {
         crossOrigin: true,
     }).then(function (response) {
         console.log(response);
+
+        var h2Trails = $('<h2>');
+        h2Trails.text('Trails');
+        $('#trails').prepend(h2Trails);
+        
         for (var i = 0; i < response.trails.length; i++) {
 
             var $trail = $('<div>');
@@ -173,9 +176,6 @@ function trails() {
             $trail.append($name, $summary, $details);
             $('#trails').append($trail);
         } 
-        var h2Trails = $('<h2>');
-        h2Trails.text('Trails');
-        $('#trails').prepend(h2Trails);
     });
 };
 
@@ -196,6 +196,10 @@ $('#park-search-btn').on('click', function () {
 }); 
 
 $('#myDropdown1').on('click', 'p.list', function () {
+    appObj.lastParkCode = '',
+    appObj.lastParkName = '',
+    appObj.lastParkLat = '',
+    appObj.lastParkLong = '',
     $('#myDropdown1').toggle('hide');
     $('#navbarDropdown').css({ 'display': 'block'});
     $('#initial').css({ 'display': 'none'});
@@ -203,6 +207,7 @@ $('#myDropdown1').on('click', 'p.list', function () {
     $('.grid').css({'display': 'grid'});
     unsplash($(this).text());
     parks($(this).text());
+    weatherObj.callHomeWeather();
 });
 
 $('#navbarDropdown').on('click', function () {
@@ -219,6 +224,7 @@ $('#myDropdown').on('click', 'p.list', function () {
     $('#myDropdown').toggle('hide');
     unsplash($(this).text());
     parks($(this).text());
+    weatherObj.callHomeWeather();
 });
 
 $('#itinerary-add-btn2').on('click', function () {

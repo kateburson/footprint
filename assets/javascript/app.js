@@ -14,10 +14,10 @@ var database = firebase.database();
 
 var appObj = {
     userId: '1',
-    lastParkCode: 'yose',
-    lastParkName: 'Yosemite',
-    lastParkLat: '29.30662089',
-    lastParkLong: '-98.4289522',
+    lastParkCode: '',
+    lastParkName: '',
+    lastParkLat: '',
+    lastParkLong: '',
     currUserName: '',
     currUserUid: '',
 };
