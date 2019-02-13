@@ -40,12 +40,14 @@ var weatherObj = {
                 var weatherDate = response.response[0].periods[i].dateTimeISO;
                 console.log('weather',weatherDate);
                 var momentDate = moment(weatherDate).format('MMMM Do YYYY');
-                var temp = '<div> Temp: ' + response.response[0].periods[i].avgTempF;
-                var humid = '<div> Humidity: ' + response.response[0].periods[i].humidity;
+                var temp = '<div> Temp: ' + response.response[0].periods[i].avgTempF + 'F';
+                var humid = '<div> Humidity: ' + response.response[0].periods[i].humidity + '%';
+                var conditions = '<div> Conditions: ' + response.response[0].periods[i].weather;
                 var weatherIcon = 'assets/images/weather/' + response.response[0].periods[i].icon;
                 div.append(momentDate);
                 div.append(temp);
                 div.append(humid);
+                div.append(conditions);
                 img.attr('src', weatherIcon);
                 div.append(img);
                 console.log('target',target);
