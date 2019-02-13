@@ -1,14 +1,14 @@
 $(document).ready(function(){
   // Initialize Firebase
-  var config = {
-   apiKey: "AIzaSyAUbsJcyadBDoOGF24ajS7SC3Q7KweP_AY",
-   authDomain: "bootcamp-project1-504c8.firebaseapp.com",
-   databaseURL: "https://bootcamp-project1-504c8.firebaseio.com",
-   projectId: "bootcamp-project1-504c8",
-   storageBucket: "bootcamp-project1-504c8.appspot.com",
-   messagingSenderId: "452720723166"
- };
-   firebase.initializeApp(config);
+//   var config = {
+//    apiKey: "AIzaSyAUbsJcyadBDoOGF24ajS7SC3Q7KweP_AY",
+//    authDomain: "bootcamp-project1-504c8.firebaseapp.com",
+//    databaseURL: "https://bootcamp-project1-504c8.firebaseio.com",
+//    projectId: "bootcamp-project1-504c8",
+//    storageBucket: "bootcamp-project1-504c8.appspot.com",
+//    messagingSenderId: "452720723166"
+//  };
+//    firebase.initializeApp(config);
  
    // var database = firebase.database();
  
@@ -29,7 +29,7 @@ $(document).ready(function(){
      
      var promise = auth.signInWithEmailAndPassword(email,pass);
      promise.catch(e => console.log(e.message));
-     $("#user").html(name);
+     $("#username").html("Welcome, ", email);
      
    })
  
@@ -42,6 +42,8 @@ $(document).ready(function(){
      var auth = firebase.auth();
      var promise = auth.createUserWithEmailAndPassword(email,pass)
      promise.catch(f => console.log(f.message));
+     $("#username").html("Welcome, ", email);
+
      
  
    })
@@ -49,14 +51,13 @@ $(document).ready(function(){
    $("#btnLogout").on('click', function(e) {
        e.preventDefault();
      firebase.auth().signOut();
-     $("#user").html("");
+     $("#username").html("");
  
  
    })
    firebase.auth().onAuthStateChanged(firebaseUser =>  {
      if(firebaseUser) {
        console.log(firebaseUser);
-       console.log(firebase.email);
        $("#btnLogout").removeClass('invisible');
        $("#login").addClass("invisible");
      

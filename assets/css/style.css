@@ -264,3 +264,94 @@ a:hover {
 .itinerary-remove:hover {
     opacity: 1.0;
 }
+
+@media only screen and (max-width: 991px) {
+
+    h1 {
+        font-size: 48pt;
+        text-shadow: black -2.5px 2.5px;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+
+    .grid {
+        grid-template-columns: [1] auto [2] auto [3];
+        grid-auto-rows: [1] auto [2] auto [3] auto [4] auto [5] auto [6] auto [7] auto [8] auto [9];
+        grid-row-gap: 25px;
+        grid-column-gap: 25px;
+        margin-bottom: 25px;
+    }
+    
+    #title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        z-index: 2;
+        margin-left: 25px;
+    }
+    
+    #itinerary-add-btn2 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin-left: 25px;
+        padding: 15px 15px;
+        width: 60%;
+    }
+    
+    #main-img-container {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        width: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    #search-results {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        padding: 25px;
+        border: palevioletred solid 2pt;
+        background-color: white;
+    }
+    
+    #home-weather-info{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        padding: 25px;
+    }
+    
+    #links {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+        padding: 25px;
+    }
+    
+    #itinerary {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 7;  
+        grid-row-end: 8;
+    }
+    
+    #trails {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 8;
+        grid-row-end: 9;
+        padding: 25px;
+    }
+
+}

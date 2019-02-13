@@ -223,6 +223,7 @@ $('#navbarDropdown').on('click', function () {
 });
 
 $('#myDropdown').on('click', 'p.list', function () {
+    $('#myDropdown').empty();
     $('#search-results').empty();
     $('#home-weather-info').empty();
     $('#main-img-container').empty();
