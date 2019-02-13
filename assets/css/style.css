@@ -77,7 +77,7 @@ h3 {
 
 .grid {
     position: relative;
-    top: 50px;
+    top: 100px;
     display: none;
     grid-template-columns: [1] 25% [2] 25% [3] 25% [4] 25% [5];
     grid-auto-rows: [1] auto [2] auto [3] auto [4] auto [5] auto [6] auto [7] auto [8] auto [9];
@@ -96,7 +96,7 @@ h3 {
     align-items: start;
 }
 
-#itinerary-add-btn2 {
+#itinerary-add-btn {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 3;
@@ -113,7 +113,7 @@ h3 {
     font-family: 'Glegoo', serif;
 }
 
-#itinerary-add-btn2:hover {
+#itinerary-add-btn:hover {
     background-color: black;
     color: white;
 }
@@ -126,6 +126,8 @@ h3 {
     width: 100%;
     overflow: hidden;
     z-index: 1;
+    border: black solid 2pt;
+    box-shadow: black -10px 10px;
 }
 
 .main-img {
@@ -140,7 +142,8 @@ h3 {
     grid-row-start: 5;
     grid-row-end: 7;
     padding: 50px;
-    border: palevioletred solid 2pt;
+    border: hotpink solid 2pt;
+    box-shadow: hotpink -10px 10px;
     background-color: white;
 }
 
@@ -151,6 +154,7 @@ h3 {
     grid-row-end: 6;
     padding: 50px;
     border: orange solid 2pt;
+    box-shadow: orange -10px 10px;
     background-color: white;
 }
 
@@ -161,6 +165,7 @@ h3 {
     grid-row-end: 7;
     padding: 50px;
     border: darkmagenta solid 2pt;
+    box-shadow: darkmagenta -10px 10px;
     background-color: white;
 }
 
@@ -188,6 +193,7 @@ a:hover {
     grid-row-end: 9;
     padding: 50px;
     border: darkslateblue solid 2pt;
+    box-shadow: darkslateblue -10px 10px;
     height: 400px;
     overflow: scroll;
     background-color: white;
@@ -208,26 +214,13 @@ a:hover {
     margin: 25px 0 10px 0;
 }
 
-#itinerary-add-btn {
-    margin-top: -75px;
-    background-color: black;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 0;
-    width: auto;
-}
-
-#itinerary-add-btn:hover {
-    opacity: .8;
-}
 #itinerary-container {
-    /* background-color: rgba(30, 39, 22, .2); */
     border: solid lightseagreen 2pt;
+    box-shadow: lightseagreen -10px 10px;
     width: 100%;
 }
 
 .itinerary-view-head .itinerary-view {
-    /* background-color: rgba(30, 39, 22, .8); */
     font-weight: bold;
     color: white;
 }
@@ -245,6 +238,13 @@ a:hover {
     opacity: .8;
     vertical-align: middle;
 }
+
+#weatherDiv{
+    float: left;
+    margin: 15px;
+    padding: 15px;
+}
+
 #edit {
     margin-top: -4px;
     border-radius: 0;
@@ -293,7 +293,7 @@ a:hover {
         margin-left: 25px;
     }
     
-    #itinerary-add-btn2 {
+    #itinerary-add-btn {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 3;
@@ -311,6 +311,7 @@ a:hover {
         width: 100%;
         overflow: hidden;
         z-index: 1;
+        box-shadow: black -5px 5px;
     }
 
     #search-results {
@@ -319,7 +320,8 @@ a:hover {
         grid-row-start: 5;
         grid-row-end: 6;
         padding: 25px;
-        border: palevioletred solid 2pt;
+        border: hotpink solid 2pt;
+        box-shadow: hotpink -5px 5px;
         background-color: white;
     }
     
@@ -329,6 +331,7 @@ a:hover {
         grid-row-start: 6;
         grid-row-end: 7;
         padding: 25px;
+        box-shadow: orange -5px 5px;
     }
     
     #links {
@@ -337,6 +340,7 @@ a:hover {
         grid-row-start: 6;
         grid-row-end: 7;
         padding: 25px;
+        box-shadow: darkmagenta -5px 5px;
     }
     
     #itinerary {
@@ -345,6 +349,10 @@ a:hover {
         grid-row-start: 7;  
         grid-row-end: 8;
     }
+
+    #itinerary-container {
+        box-shadow: lightseagreen -5px 5px;
+    }
     
     #trails {
         grid-column-start: 1;
@@ -352,6 +360,7 @@ a:hover {
         grid-row-start: 8;
         grid-row-end: 9;
         padding: 25px;
+        box-shadow: darkslateblue -5px 5px;
     }
 
     .display-logo {

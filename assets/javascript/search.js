@@ -235,32 +235,3 @@ $('#myDropdown').on('click', 'p.list', function () {
     parks($(this).text());
 
 });
-
-$('#itinerary-add-btn2').on('click', function () {
-
-    event.preventDefault();
-
-    $('#itinerary-add-btn2').prop('disabled', true);
-    $('#itinerary-add-btn').prop('disabled', true);
-
-    //add form data 
-    var parkCode = appObj.lastParkCode;
-    var parkName = appObj.lastParkName;
-    var parkLat = appObj.lastParkLat;
-    var parkLong = appObj.lastParkLong;
-
-    var itineraryStart = '02/15/2019';//moment();
-    var itineraryEnd = '02/19/2019'; //moment();
-    var itineraryDuration = 1; //this will be calculated
-
-    database.ref().push({
-        parkCode: parkCode,
-        parkName: parkName,
-        parkLat: parkLat,
-        parkLong: parkLong,
-        itineraryStart: itineraryStart,
-        itineraryEnd: itineraryEnd,
-        itineraryDuration: itineraryDuration
-    });
-
-});
