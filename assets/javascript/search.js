@@ -59,6 +59,8 @@ function parks(parkName) {
     $('#main-img-container').append($img);
 
     var queryURL = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&api_key=7saAAebFIxUpWP1IHtyJN3nKfo94xMzf009LSiHb';
+    console.log('LOOK!', appObj);
+    console.log($('#itinerary-add-btn'));
 
     $.ajax({
         url: queryURL,
@@ -117,6 +119,7 @@ function parks(parkName) {
             $('#links').append(directionsP, websiteP);
 
             var h2Weather = $('<h2>');
+            h2Weather.attr({'id': 'h2Weather'});
             h2Weather.text('Weather');
             $('#home-weather-info').prepend(h2Weather);
 

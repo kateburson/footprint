@@ -120,11 +120,15 @@ var itineraryObj = {
     getItinerary: function () {
         //call this from login
         console.log('getItinerary');
+        // $('#itinerary-add-btn').css({'display': 'block'});
+        
     },
     clearItinerary: function () {
         //call this from logout
         console.log('clearItinerary');
         $('#itinerary-data').empty();
+        // $('#itinerary-add-btn').css({'display': 'none'});
+        
     }
 };
 
@@ -227,5 +231,3 @@ $('#editItinModal').on('show.bs.modal', function (event) {
 
 });
 
-// $("#datepicker").datepicker();
-// $("#end-date").datepicker();

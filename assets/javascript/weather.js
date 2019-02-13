@@ -42,14 +42,14 @@ var weatherObj = {
                 var momentDate = moment(weatherDate).format('MMMM Do YYYY');
                 var temp = '<div> Temp: ' + response.response[0].periods[i].avgTempF + 'F';
                 var humid = '<div> Humidity: ' + response.response[0].periods[i].humidity + '%';
-                var conditions = '<div> Conditions: ' + response.response[0].periods[i].weather;
+                var conditions = '<div>' + response.response[0].periods[i].weather + '</div>';
                 var weatherIcon = 'assets/images/weather/' + response.response[0].periods[i].icon;
                 div.append(momentDate);
                 div.append(temp);
                 div.append(humid);
-                div.append(conditions);
                 img.attr('src', weatherIcon);
                 div.append(img);
+                div.append(conditions);
                 console.log('target',target);
                 if(target === 'home') {
                     $('#home-weather-info').append(div);

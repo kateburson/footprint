@@ -111,6 +111,7 @@ h3 {
     border-radius: 0;
     font-weight: normal;
     font-family: 'Glegoo', serif;
+    /* display: none; */
 }
 
 #itinerary-add-btn:hover {
@@ -156,6 +157,10 @@ h3 {
     border: orange solid 2pt;
     box-shadow: orange -10px 10px;
     background-color: white;
+}
+
+#weather-icon {
+    float: right;
 }
 
 #links {
@@ -239,8 +244,8 @@ a:hover {
 
 #weatherDiv{
     float: left;
-    margin: 15px;
-    padding: 15px;
+
+
 }
 
 #edit {
