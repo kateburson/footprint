@@ -11,7 +11,7 @@ var itineraryObj = {
         row.attr({ class: 'row itinerary-data-row', id: key });
 
         var editDiv = $('<div>');
-        editDiv.attr({ class: 'col-md-1' });
+        editDiv.attr({ class: 'col-md-1 col-sm-1 col-1' });
 
         var edit = $('<i>');
         edit.attr({ class: 'fas fa-pen-square fa-lg', 'data-toggle': 'modal', 'data-target': '#editItinModal', 'data-key': key });
@@ -19,7 +19,7 @@ var itineraryObj = {
         row.append(editDiv);
 
         var parkName = $('<div>');
-        parkName.attr({ class: 'col-md-5 parkname-display' });
+        parkName.attr({ class: 'col-md-5 col-sm-7 col-7 parkname-display' });
         parkName.text(snapshot.val().parkName);
         row.append(parkName);
 
@@ -34,15 +34,15 @@ var itineraryObj = {
         row.append(itineraryEnd);
 
         var itineraryDuration = $('<div>');
-        itineraryDuration.attr({ class: 'col-md-1 text-center days-display' });
+        itineraryDuration.attr({ class: 'col-md-1 col-sm-3 col-3 text-center days-display' });
         itineraryDuration.text(snapshot.val().itineraryDuration);
         row.append(itineraryDuration);
 
         var removeDiv = $('<div>');
-        removeDiv.attr({ class: 'col-md-1 text-center' });
+        removeDiv.attr({ class: 'col-md-1 text-center col-sm-1 col-1' });
 
         var remove = $('<i>');
-        remove.attr({ class: 'fas fa-trash-alt fa-sm itinerary-remove', removekey: key });
+        remove.attr({ class: 'fas fa-trash-alt fa-sm  itinerary-remove', removekey: key });
         removeDiv.append(remove);
         row.append(remove);
 
@@ -230,4 +230,3 @@ $('#editItinModal').on('show.bs.modal', function (event) {
 
 
 });
-

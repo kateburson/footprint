@@ -45,6 +45,12 @@
     font-size: 24pt;
     font-weight: normal;
     font-family: 'Glegoo', serif;
+    color: white;
+}
+
+.lead {
+    color: white;
+    font-size: 14pt;
 }
 
 .display-logo {
@@ -67,12 +73,19 @@ h2 {
     font-size: 20pt;
     font-weight: normal;
     font-family: 'Glegoo', serif;
+    color: #54595a;
 }
 
 h3 {
     font-size: 14pt;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+    color: #54595a;
+}
+
+p, div {
+    color: #54595a;
+
 }
 
 .grid {
@@ -176,12 +189,13 @@ h3 {
 }
 
 a {
-    color: grey;
+    color: #9f8f80;
+    padding: 15px;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #54595a;
+    text-decoration: underline;
+    color: #9f8f80;
 }
 
 #itinerary {
@@ -193,6 +207,52 @@ a:hover {
     border: solid #2c656d 2pt;
     box-shadow: #2c656d -10px 10px;
     width: 100%;
+}
+
+#itinerary-title {
+    text-align: center;
+    padding: 25px;
+}
+
+#itinerary-data-head {
+    background-color: #2c656d;
+    opacity: .8;
+    padding: 10px;
+    color: white;
+}
+
+.edit-icon {
+    color: white;
+}
+
+.park-name {
+    color: white;
+}
+
+.start-date {
+    color: white;
+}
+
+.end-date {
+    color: white;
+}
+
+.days {
+    color: white;
+}
+
+.trash {
+    color: white;
+}
+
+.itinerary-data-row {
+    height: 50px;
+    background-color: #f8f9fa;
+    color: #54595a;
+    font-weight: bold;
+    padding: 10px 0;
+    opacity: .75;
+    vertical-align: middle;
 }
 
 #trails {
@@ -215,37 +275,6 @@ a:hover {
 #trail-name {
     width: 100%;
     margin-top: 25px;
-}
-/* itinerary */
-
-#trip-itinerary {
-    text-align: center;
-    margin: 25px 0 10px 0;
-}
-
-#itinerary-title {
-    text-align: center;
-    padding: 25px;
-}
-
-#itinerary-data-head {
-    background-color: #2c656d;
-    opacity: .8;
-    padding: 10px;
-    color: white;
-}
-.itinerary-data-row {
-    height: 50px;
-    background-color: #f8f9fa;
-    color: #54595a;
-    font-weight: bold;
-    padding: 10px 0;
-    opacity: .75;
-    vertical-align: middle;
-}
-
-#weatherDiv{
-    float: left;
 }
 
 #edit {
@@ -305,7 +334,7 @@ a:hover {
         grid-row-end: 4;
         margin-left: 25px;
         padding: 15px 15px;
-        width: 60%;
+        width: 40%;
     }
     
     #main-img-container {
@@ -345,7 +374,7 @@ a:hover {
         grid-row-start: 6;
         grid-row-end: 7;
         padding: 25px;
-        box-shadow: #2c656d -5px 5px;
+        box-shadow: #9f8f80 -5px 5px;
     }
     
     #itinerary {
@@ -353,23 +382,73 @@ a:hover {
         grid-column-end: 3;
         grid-row-start: 7;  
         grid-row-end: 8;
+        box-shadow: #2c656d -5px 5px;
     }
 
-    #itinerary-container {
-        box-shadow: #9f8f80 -5px 5px;
+    #itinerary-title {
+        padding: 25px;
+    }
+
+
+.edit-icon {
+    color: white;
+}
+
+.park-name {
+    color: white;
+}
+
+.start-date {
+    color: white;
+}
+
+.end-date {
+    color: white;
+}
+
+.days {
+    color: white;
+}
+
+    
+#trails {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    padding: 25px;
+    box-shadow: #5b653d -5px 5px;
+}
+
+.display-logo {
+    bottom: 87%;
+}
+
+
+}
+
+@media only screen and (max-width: 783px) {
+
+    .start-date {
+        color: white;
+        display: none;
     }
     
-    #trails {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 8;
-        grid-row-end: 9;
-        padding: 25px;
-        box-shadow: #5b653d -5px 5px;
+    .end-date {
+        color: white;
+        display: none;
     }
 
-    .display-logo {
-        bottom: 87%;
+    .start-display, .start-title {
+        display: none;
+    }
+    
+    .end-display, .end-title {
+        display: none;
     }
 
+    #itinerary-data-head {
+        height: 50px;
+        padding: 10px;
+    }
 }
