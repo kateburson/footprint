@@ -124,6 +124,7 @@ var itineraryObj = {
     clearItinerary: function () {
         //call this from logout
         console.log('clearItinerary');
+        $('#itinerary-data').empty();
     }
 };
 

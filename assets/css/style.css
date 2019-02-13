@@ -184,6 +184,9 @@ a:hover {
     grid-row-start: 7;  
     grid-row-end: 8;
     background-color: white;
+    border: solid lightseagreen 2pt;
+    box-shadow: lightseagreen -10px 10px;
+    width: 100%;
 }
 
 #trails {
@@ -214,16 +217,11 @@ a:hover {
     margin: 25px 0 10px 0;
 }
 
-#itinerary-container {
-    border: solid lightseagreen 2pt;
-    box-shadow: lightseagreen -10px 10px;
-    width: 100%;
+#itinerary-title {
+    text-align: center;
+    padding: 25px;
 }
 
-.itinerary-view-head .itinerary-view {
-    font-weight: bold;
-    color: white;
-}
 #itinerary-data-head {
     background-color: rgba(30, 39, 22, .4);
     padding-left: 10px 0px 0px 10px;

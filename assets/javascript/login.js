@@ -1,16 +1,4 @@
 $(document).ready(function(){
-  // Initialize Firebase
-//   var config = {
-//    apiKey: "AIzaSyAUbsJcyadBDoOGF24ajS7SC3Q7KweP_AY",
-//    authDomain: "bootcamp-project1-504c8.firebaseapp.com",
-//    databaseURL: "https://bootcamp-project1-504c8.firebaseio.com",
-//    projectId: "bootcamp-project1-504c8",
-//    storageBucket: "bootcamp-project1-504c8.appspot.com",
-//    messagingSenderId: "452720723166"
-//  };
-//    firebase.initializeApp(config);
- 
-   // var database = firebase.database();
  
    var txtEmail = $('#txtEmail');
      var txtPass = $('#txtPass');
@@ -18,8 +6,8 @@ $(document).ready(function(){
      var btnLogin = $("#btnLogin");
      var btnSignup = $("#btnSignup");
      var btnLogout = $("#btnLogout");
-    
- 
+     var error = $('#error');
+   
    $("#btnLogin").on('click', function(e) {
      e.preventDefault();
      var email = txtEmail.val();
@@ -29,8 +17,11 @@ $(document).ready(function(){
      
      var promise = auth.signInWithEmailAndPassword(email,pass);
      promise.catch(e => console.log(e.message));
-     $("#username").html("Welcome, ", email);
-     
+     $("#user").html("Welcome, " + email);
+     console.log(email)
+     promise.catch(e => $('#error').html("Error " + e.message));
+     itineraryObj.getItinerary();
+ 
    })
  
  
@@ -40,10 +31,14 @@ $(document).ready(function(){
      var email = txtEmail.val();
      var pass = txtPass.val();
      var auth = firebase.auth();
-     var promise = auth.createUserWithEmailAndPassword(email,pass)
+     var promise = auth.createUserWithEmailAndPassword(email,pass).then(function(user) {
+       return user.updateProfile({'displayName': $("#txtName").val()});
+     }).catch(function(error) {
+       console.log(error);
+     });
      promise.catch(f => console.log(f.message));
-     $("#username").html("Welcome, ", email);
-
+     promise.catch(e => $('#error').html("Error " + e.message));
+     
      
  
    })
@@ -51,7 +46,11 @@ $(document).ready(function(){
    $("#btnLogout").on('click', function(e) {
        e.preventDefault();
      firebase.auth().signOut();
-     $("#username").html("");
+     $("#user").html("");
+     appObj.currUserId = ""
+     appObj.currUserName = ""
+     itineraryObj.clearItinerary();
+ 
  
  
    })
@@ -59,13 +58,18 @@ $(document).ready(function(){
      if(firebaseUser) {
        console.log(firebaseUser);
        $("#btnLogout").removeClass('invisible');
-       $("#login").addClass("invisible");
+      //  $("#login").addClass("invisible");
+      $("#login").text(firebaseUser.email);
+       appObj.currUserName = firebaseUser.email; 
+       appObj.currUserId = firebaseUser.uid;
+       console.log(firebaseUser.email);
+   
      
       }
        else {
          console.log("not logged in");
          $("#btnLogout").addClass('invisible');
-         $("#login").removeClass('invisible');
+         $("#login").text('Log In/Sign Up');
          
      
  
