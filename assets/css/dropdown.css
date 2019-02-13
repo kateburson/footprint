@@ -4,9 +4,12 @@
     color: black;
     border: none;
     border-radius: 0;
-    width: 100%;
+    width:  100%;
     padding: 16px;
-    font-size: 18pt;
+    font-size: 14pt;
+    font-weight: normal;
+    font-family: 'Glegoo', serif;
+    letter-spacing: 2px;
     cursor: pointer;
   }
   

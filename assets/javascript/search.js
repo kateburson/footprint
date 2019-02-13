@@ -25,31 +25,38 @@ function myFunction() {
     dropdown();
 };
 
-function unsplash(input) {
-    console.log('unsplash: ' + input);
+// function unsplash(input) {
+//     console.log('unsplash: ' + input);
 
-    var queryURL = 'https://api.unsplash.com/search/photos?orientation=landscape&page=1&query=' + input + '&client_id=595205d0fab64dca9acc4912f7319d2869c29ff0834538b31167dbca9425a2f6&client_secret=00c14faa873902ff8dd494014545db17655595508ae0c67fe37a8774e4b7b45c';
+//     var queryURL = 'https://api.unsplash.com/search/photos?orientation=landscape&page=1&query=' + input + '&client_id=595205d0fab64dca9acc4912f7319d2869c29ff0834538b31167dbca9425a2f6&client_secret=00c14faa873902ff8dd494014545db17655595508ae0c67fe37a8774e4b7b45c';
 
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-    }).then(function (response) {
-        console.log(response);
-        for(var i = 0; i < 1; i++){
-            var $img = $('<img>');
-            $img.attr({class: 'main-img'});
-            $img.attr({src: response.results[i].urls.regular});
-            $('#main-img-container').append($img);
-        }
-    });
-};
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET",
+//     }).then(function (response) {
+//         console.log(response);
+//         for(var i = 0; i < 1; i++){
+//             var $img = $('<img>');
+//             $img.attr({class: 'main-img'});
+//             $img.attr({src: response.results[i].urls.regular});
+//             $('#main-img-container').append($img);
+//         }
+//     });
+// };
 
 function parks(parkName) {
     console.log(parkName);
 
     var position = parkNames.indexOf(parkName);
     var parkCode = parkCodes[position];
+    var parkImg = parkImages[position];
     console.log(parkCode);
+
+    var $img = $('<img>');
+    $img.attr({class: 'main-img'});
+    $img.attr({src: 'assets/images/parkMain/' + parkImg});
+    console.log($img);
+    $('#main-img-container').append($img);
 
     var queryURL = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&api_key=7saAAebFIxUpWP1IHtyJN3nKfo94xMzf009LSiHb';
 
@@ -206,7 +213,7 @@ $('#myDropdown1').on('click', 'p.list', function () {
     $('#initial').css({ 'display': 'none'});
     console.log('dropdown-click', this);
     $('.grid').css({'display': 'grid'});
-    unsplash($(this).text());
+    // unsplash($(this).text());
     parks($(this).text());
 
 });
@@ -223,7 +230,7 @@ $('#myDropdown').on('click', 'p.list', function () {
     $('#trails').empty();
     $('#links').empty();
     $('#myDropdown').toggle('hide');
-    unsplash($(this).text());
+    // unsplash($(this).text());
     parks($(this).text());
 
 });
