@@ -52,7 +52,7 @@ $(document).ready(function(){
       e.preventDefault();
     firebase.auth().signOut();
     $("#user").html("");
-    appObj.currUserId = ""
+    appObj.currUserUid = ""
     appObj.currUserName = ""
     itineraryObj.clearItinerary();
     $('#txtName').val("");
@@ -69,8 +69,9 @@ $(document).ready(function(){
      //  $("#login").addClass("invisible");
      $("#login").text(firebaseUser.email);
       appObj.currUserName = firebaseUser.email; 
-      appObj.currUserId = firebaseUser.uid;
+      appObj.currUserUid = firebaseUser.uid;
       console.log(firebaseUser.email);
+      console.log(firebaseUser.uid)
       $('#error').html('')
       $('#modalLoginForm').modal('hide')
   
